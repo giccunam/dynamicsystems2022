@@ -5,10 +5,13 @@ Dr. Victor De la Luz
 vdelaluz@enesmorelia.unam.mx
 http://www.gicc.unam.mx
 
-GNU/GPL License
+GNU/GPL License 3.0
 
-Contributor
-Miriam Guadalupe Valdez Maldonado
+Contributors
+
+> Miriam Guadalupe Valdez Maldonado
+
+> Alexis Hassiel Nuviedo Arriaga
 
 
 
