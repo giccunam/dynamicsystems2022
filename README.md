@@ -17,6 +17,8 @@ Arely Hilda Luis Tiburcio
 
 > Sofia Garcia De La Rosa
 
+> Jadiel Zuñiga Rodriguez
+
 
 
 
