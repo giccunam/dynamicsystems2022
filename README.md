@@ -8,6 +8,7 @@ http://www.gicc.unam.mx
 GNU/GPL License
 
 Contributor
+Miriam Guadalupe Valdez Maldonado
 
 
 
