@@ -29,11 +29,11 @@ import numpy as np
 # x = ((1+rc)/r)*a
 
 c=10
-x0= 2000.0/2829.0
-r=0.2829
+x0= 20.0/23.0
+r=0.23
 
 a0 = 0.2
-rho = 3.829
+rho = 3.3
 
 fig, ax = plt.subplots()
 
@@ -80,6 +80,6 @@ ax.plot(X, linewidth=2.0)#,label='c='+str(c)  )
 
 #plt.yscale('log')
 #plt.legend()
-plt.title('a = rho*a*(1-a) chaos')
-plt.savefig('population-grow-resources-chaos.png')
+plt.title('a = rho*a*(1-a) periodic')
+plt.savefig('population-grow-resources-periodic.png')
 plt.show()

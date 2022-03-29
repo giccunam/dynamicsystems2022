@@ -41,13 +41,13 @@ a = a0
 X = []
 X.append(x0)
 
-itera = np.arange(0,26)
+itera = np.arange(0,1000)
 
 for i in itera:
     a = rho*a*(1.0 - a)
     X.append(((1.0+ r*c)/r)*a)
     
-ax.plot(X, linewidth=2.0)#,label='c='+str(c)  )
+ax.hist(X)#,label='c='+str(c)  )
 
 
 #r= 0.01
