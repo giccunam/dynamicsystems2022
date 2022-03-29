@@ -1,2 +1,13 @@
 # dynamicsystems2022
-Workshop of dynamic systems at National University of Mexico
+Workshop of Dynamic Systems at National University of Mexico (2022-2)
+
+Dr. Victor De la Luz
+vdelaluz@enesmorelia.unam.mx
+http://www.gicc.unam.mx
+
+GNU/GPL License
+
+
+
+
+
