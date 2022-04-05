@@ -59,13 +59,13 @@ dx = 1/N_max
 dy = 1/N_max
 
 Dx = []
-Dy = [] 
+Dy = []
 
-for b in Y: 
+for b in Y:
     y = b*dy
     for a in X:
         x = a*dx
-        #y = math.sqrt(1.0 - x*x) 
+        #y = math.sqrt(1.0 - x*x)
         #if y <= 1:
         #    print(x,y)
         if math.sqrt(x*x + y*y) <= 1:
@@ -88,35 +88,28 @@ Ft = []
 Fx = []
 Fy = []
 n = 0
+for x, y in zip(Dx,Dy):
+    for t in T:
+        a,b,c = F(t,x,y)
+        Ft.append(a)
+        Fx.append(b)
+        Fy.append(c)
+        n = n + 1
+
+        print(n)
+
+Ft = []
+Fx = []
+Fy = []
+n=0
+for p in zip(Ft,Fx,Fy):
+    a,b,c = F(p)
+    Ft.append(a)
+    Fx.append(b)
+    Fy.append(c)
+
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-for t in T:
-    ax.scatter(t,Dx, Dy)
-
+ax.scatter(Fx, Fy, Ft, color='r')
 plt.show()
-
-
-##
-##
-##for x, y in zip(Dx,Dy):
-##    for t in T:
-##        a,b,c = F(t,x,y)
-##        Ft.append(a)
-##        Fx.append(b)
-##        Fy.append(c)
-##
-##
-##
-##
-##Ft = []
-##Fx = []
-##Fy = []
-##n=0
-##for p in zip(Ft,Fx,Fy):
-##    a,b,c = F(p)
-##    Ft.append(a)
-##    Fx.append(b)
-##    Fy.append(c)
-##    
-##        
