@@ -33,7 +33,7 @@ import matplotlib.pyplot as plt
 
 
 def F(t,x,y):
-    return 2.0*t % 1.0, 0.25*( x + 2.0*math.cos(2.0*math.pi*t)), 0.25*(y+2.0*math.sin(2.0*math.pi*t) )
+    return 2.0*t % 1.0, 0.25*( x + 2.0*math.cos(2.0*math.pi*t)), 0.25*(y+2.0*math.sin(2.0*math.pi*t))
 
 
 N_max = 20
@@ -88,15 +88,41 @@ Ft = []
 Fx = []
 Fy = []
 n = 0
-for x, y in zip(Dx,Dy):
-    for t in T:
-        a,b,c = F(t,x,y)
-        Ft.append(a)
-        Fx.append(b)
-        Fy.append(c)
-        n = n + 1
 
-        print(n)
+fig = plt.figure()
+ax = fig.add_subplot(111, projection = '3d')
+
+#for t in T :
+#    ax.scatter(t, Dx, Dy)
+
+Ttemp = []
+for t in T :
+    Ttemp.append((2.0*t) % 1.0)
+
+T = Ttemp
+
+for t in T :
+    Xtemp = []
+    for x in Dx :
+        Xtemp.append(0.25*( x + 2.0*math.cos(2.0*math.pi*t)))
+    Dx = Xtemp
+    Ytemp = []
+    for y in Dy :
+        Ytemp.append(0.25*( y + 2.0*math.sin(2.0*math.pi*t)))
+    Dy = Ytemp
+    
+    ax.scatter(t, Dx, Dy)
+
+plt.show()
+#for x, y in zip(Dx,Dy):
+#    for t in T:
+#        a,b,c = F(t,x,y)
+#        Ft.append(a)
+#        Fx.append(b)
+#        Fy.append(c)
+#        n = n + 1
+
+        #print(n)
 
 Ft = []
 Fx = []
@@ -109,7 +135,7 @@ for p in zip(Ft,Fx,Fy):
     Fy.append(c)
     
         
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.scatter(Fx, Fy, Ft, color='r')
-plt.show()
+#fig = plt.figure()
+#ax = fig.add_subplot(111, projection='3d')
+#ax.scatter(Fx, Fy, Ft, color='r')
+#plt.show()
