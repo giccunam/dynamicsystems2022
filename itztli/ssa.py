@@ -91,7 +91,26 @@ n = 0
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
+
+#for t in T:
+#    ax.scatter(t,Dx, Dy)
+
+Ttemp=[]
 for t in T:
+    Ttemp.append( (2.0*t) % 1.0)
+
+T = Ttemp
+
+for t in T:
+    Xtemp=[]
+    for x in Dx:
+        Xtemp.append(0.25*( x + 2.0*math.cos(2.0*math.pi*t)))
+    Dx = Xtemp
+    Ytemp=[]
+    for y in Dy:
+        Ytemp.append(0.25*(y+2.0*math.sin(2.0*math.pi*t)))
+    Dy=Ytemp
+
     ax.scatter(t,Dx, Dy)
 
 plt.show()
