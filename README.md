@@ -13,7 +13,7 @@ Contributors
 
 > Alexis Hassiel Nuviedo Arriaga
 
-Arely Hilda Luis Tiburcio
+> Arely Hilda Luis Tiburcio
 
 > Sofia Garcia De La Rosa
 
@@ -27,4 +27,4 @@ Arely Hilda Luis Tiburcio
 
 > Anton Pashkov
 
->Luis Aaron Nieto Cruz
+> Luis Aaron Nieto Cruz
