@@ -38,14 +38,30 @@ print(F(.5,.5,.5))
 
 Tn,Xn,Yn=T,Xv,Yv
 
-fig = plt.figure()
-ax = fig.add_subplot()#(projection='3d')
+#fig = plt.figure()
+#ax = fig.add_subplot(projection='3d')
 
-for i in range(50):
-	Tn,Xn,Yn=F(Tn,Xn,Yn)
-	if(i%4==0):
-		ax.scatter(Xn,Yn)#s,Tn)
-plt.show()
+def plots(Tn,Xn,Yn,i):
+	fig = plt.figure()
+	ax = fig.add_subplot(projection='3d')
+	ax.scatter(Xn,Yn,Tn)
+	ax.set_xlim([0,1])
+	ax.set_ylim([-1,1])
+	ax.set_zlim([-1,1])
+	plt.savefig("images_attr/"+f"{i:03d}"+"-attrc.png")
+
+
+plots(Tn,Xn,Yn,0)
+for i in range(60):
+	#_=[]
+	Xf=[]
+	Yf=[]
+	for j in range(len(Tn)):
+		_,x,y=F(Tn[j],Xn[j],Yn[j])
+		Xf.append(x)
+		Yf.append(y)
+	Xn,Yn=Xf,Yf
+	plots(Tn,Xn,Yn,i+1)
 
 
 
