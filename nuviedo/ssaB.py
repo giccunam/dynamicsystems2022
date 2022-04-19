@@ -1,6 +1,7 @@
 
 #Smale's Solenoid Attractor - An attempt at a dynamic system attractor 
 #visualization in py3
+#Theorical model from Ergodic Dynamics (2021) by Jane Hawkings
 #
 #Copyright (C) 2022 Alexis H. Nuviedo Arriaga alexis.nuviedo@gmail.com
 #
