@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-N_max=100
+N_max=10
 
 Xrange=np.arange(-N_max,N_max)
 dx=1/N_max
@@ -36,32 +36,20 @@ print(F(.5,.5,.5))
 #plt.scatter(Xv,Yv)
 #plt.show()
 
-Tn,Xn,Yn=T,Xv,Yv
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+#for t in T:
+#	ax.scatter(t,Dx,Dy)
+#plt.show()
 
-#fig = plt.figure()
-#ax = fig.add_subplot(projection='3d')
-
-def plots(Tn,Xn,Yn,i):
-	fig = plt.figure()
-	ax = fig.add_subplot(projection='3d')
-	ax.scatter(Xn,Yn,Tn)
-	ax.set_xlim([0,1])
-	ax.set_ylim([-1,1])
-	ax.set_zlim([-1,1])
-	plt.savefig("images_attr/"+f"{i:03d}"+"-attrc.png")
-
-
-plots(Tn,Xn,Yn,0)
-for i in range(60):
-	#_=[]
-	Xf=[]
-	Yf=[]
-	for j in range(len(Tn)):
-		_,x,y=F(Tn[j],Xn[j],Yn[j])
-		Xf.append(x)
-		Yf.append(y)
-	Xn,Yn=Xf,Yf
-	plots(Tn,Xn,Yn,i+1)
+nT,nX,nY=T,Dx,Dy
+for i in range(1000):
+	for t in T:
+		nT,nX,nY=F(t,nX,nY)	
+		if(i==999):
+			ax.scatter(nT,nX,nY)
+plt.show()
+	
 
 
 
