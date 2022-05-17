@@ -90,7 +90,8 @@ Fy = []
 n = 0
 
 fig = plt.figure()
-ax = fig.add_subplot(111, projection = '3d')
+#ax = fig.add_subplot(111, projection = '3d')
+ax = fig.add_subplot(111)
 
 #for t in T :
 #    ax.scatter(t, Dx, Dy)
@@ -102,23 +103,66 @@ for t in T :
 T = Ttemp
 
 n = 0
-for t in T :
+
+ax.scatter(Dx,Dy,color='blue')
+ax.set_xlim([-1,1])
+ax.set_ylim([-1,1])
+ax.set_title('Attractor (Example 3.9, Hawkings 2021)')
+
+filename = '000-atractor.png'
+print(filename)
+plt.savefig('ejemplo2/'+filename)
+
+Tn = len(Dx)
+
+T = np.arange(0,1,1.0/Tn)
+
+for n in range (10) :
+    Ttemp = []
     Xtemp = []
-    for x in Dx :
-        Xtemp.append(0.25*( x + 2.0*math.cos(2.0*math.pi*t)))
-    Dx = Xtemp
     Ytemp = []
-    for y in Dy :
-        Ytemp.append(0.25*( y + 2.0*math.sin(2.0*math.pi*t)))
+    
+    plt.cla()
+    ax = fig.add_subplot(111)
+    
+    for t,x,y in zip(T,Dx,Dy) :
+        Ttemp.append((2.0*t) % 1.0)
+        Xtemp.append(0.25*(x + 2.0*math.cos(2.0*math.pi*t)))
+        Ytemp.append(0.25*(y+2.0*math.sin(2.0*math.pi*t)))
+
+    T = Ttemp
+    Dx = Xtemp
     Dy = Ytemp
-    ax.scatter(t,Dx,Dy)
-    ax.set_xlim([0,1])
+    ax.scatter(Dx,Dy,color='blue')
+    ax.set_xlim([-1,1])
     ax.set_ylim([-1,1])
-    ax.set_zlim([-1,1])
-    filename = f'{n:03d}' + '-atractor.png'
+    ax.set_title('Attractor (Example 3.9, Hawkings 2021)')
+    filename = f'{n+1:03d}' + '-atractor.png'
     print(filename)
-    plt.savefig('ejemplo1/'+filename )
-    n+=1
+    plt.savefig('ejemplo2/'+filename)
+
+
+    
+    #ax = fig.add_subplot(111, projection='3d')
+###    for t in T :
+###        Ttemp.append((2.0*t) % 1.0)
+###        Xtemp = []
+###        for x in Dx :
+###            Xtemp.append(0.25*( x + 2.0*math.cos(2.0*math.pi*t)))
+###        Dx = Xtemp
+###        Ytemp = []
+###        for y in Dy :
+###            Ytemp.append(0.25*( y + 2.0*math.sin(2.0*math.pi*t)))
+###        Dy = Ytemp
+###        #ax.scatter(t,Dx,Dy)
+###        ax.scatter(Dx,Dy,color = 'blue')
+###        ax.set_xlim([-1,1])
+###        ax.set_ylim([-1,1])
+###        #ax.set_zlim([-1,1])
+###    filename = f'{n:03d}' + '-atractor.png'
+###    print(filename)
+###    plt.savefig('ejemplo2/'+filename )
+###        # n+=1
 
 
 plt.show()
@@ -132,15 +176,15 @@ plt.show()
 
         #print(n)
 
-Ft = []
-Fx = []
-Fy = []
-n=0
-for p in zip(Ft,Fx,Fy):
-    a,b,c = F(p)
-    Ft.append(a)
-    Fx.append(b)
-    Fy.append(c)
+##Ft = []
+##Fx = []
+##Fy = []
+##n=0
+##for p in zip(Ft,Fx,Fy):
+##    a,b,c = F(p)
+##    Ft.append(a)
+##    Fx.append(b)
+##    Fy.append(c)
     
         
 #fig = plt.figure()

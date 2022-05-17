@@ -1,1 +1,0 @@
-# dynamicsystems2022
