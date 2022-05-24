@@ -116,27 +116,34 @@ for t in T:
     Ttemp.append(2.0*t % 1.0)
 
 T = Ttemp
-n = 0
+i = 0
 
-Ttemp = []
-for t in T:
-    Xtemp = []
-    for x in Dx:
-        Xtemp.append(0.25*( x + 2.0*math.cos(2.0*math.pi*t)))
-    Dx = Xtemp
-    Ytemp = []
-    for y in Dy:
-        Ytemp.append(0.25*(y+2.0*math.sin(2.0*math.pi*t)))
-    Dy = Ytemp
+for n in range(10):
     
-    ax.scatter(t, Dx, Dy)
-    ax.set_xlim([0, 1])
-    ax.set_ylim([-1, 1])
-    ax.set_zlim([-1, 1])
-    filename = f'{n:03d}' + '-attractor.png'
+    Ttemp = []
+    ax = fig.add_subplot(111, projection='3d')
+    for t in T:
+        Ttemp.append(2.0*t % 1.0)
+        
+        Xtemp = []
+        for x in Dx:
+            Xtemp.append(0.25*( x + 2.0*math.cos(2.0*math.pi*t)))
+        Dx = Xtemp
+        Ytemp = []
+        for y in Dy:
+            Ytemp.append(0.25*(y+2.0*math.sin(2.0*math.pi*t)))
+        Dy = Ytemp
+        
+        ax.scatter(t, Dx, Dy)
+        ax.set_xlim([0, 1])
+        ax.set_ylim([-1, 1])
+        ax.set_zlim([-1, 1])
+    
+    T = Ttemp
+    filename = f'{i:03d}' + '-attractor.png'
     print(filename)
-    plt.savefig('example1/' + filename)
-    n += 1
+    plt.savefig('example2/' + filename)
+    i += 1
 
 plt.show()
 
